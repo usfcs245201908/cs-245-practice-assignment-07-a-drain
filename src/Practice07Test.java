@@ -19,7 +19,6 @@ public class Practice07Test {
 	protected boolean basicStoreRemoveTest(List<String> list) {
 		// Obvious, I think...
 		String sample = "Hello world!";
-		
 		try {
 			list.add(sample);
 			if (list.get(0).equals(sample)) {
@@ -42,16 +41,18 @@ public class Practice07Test {
 
 		try {
 			for (int i = 0; i < work.length; i++) {
+
 				list.add(i, work[i]);
 			}
-			
+
 			if (list.size() != work.length) {
 				return false;
 			}
-			
+
 			for (int i = work.length-1; i >= 0; i--) {
-				if (! list.remove(i).equals(work[i]))
+				if (! list.remove(i).equals(work[i])){
 					return false;
+				}
 			}
 			return true;
 		} catch (Exception e) {
@@ -102,7 +103,7 @@ public class Practice07Test {
 				}
 			}
 		} catch (Exception e) {
-			// e.printStackTrace();  // Uncomment this line if you see errors in timing test.
+			 e.printStackTrace();  // Uncomment this line if you see errors in timing test.
 			return Long.MAX_VALUE;
 		}
 		return System.currentTimeMillis() - start;
